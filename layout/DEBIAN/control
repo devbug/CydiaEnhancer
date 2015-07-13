@@ -1,6 +1,6 @@
 Package: me.devbug.cydiaenhancer
 Name: CydiaEnhancer 2
-Depends: mobilesubstrate (>= 0.9.5001), cydia (>= 1.1.19), firmware (>= 7.0)
+Depends: mobilesubstrate (>= 0.9.5001), cydia (>= 1.1.19), firmware (>= 3.0)
 Version: 2.0
 Architecture: iphoneos-arm
 Description: Cydia loading speed up
