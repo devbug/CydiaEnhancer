@@ -3,16 +3,14 @@
 %hook UILocalizedIndexedCollation
 
 - (id)initWithDictionary:(id)dictionary {
-	id rtn = %orig;
+	NSDictionary *dict = @{
+		@"UICollationKey" : @"en@collation=dictionary",
+		@"UIIndexTitles" : @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#"],
+		@"UISectionTitles" : @[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#"],
+		@"UISectionStartStrings" : @[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z",@"ʒ"]
+	};
 	
-	if (rtn) {
-		MSHookIvar<NSLocale *>(rtn, "_locale") = [[NSLocale localeWithLocaleIdentifier:@"en@collation=dictionary"] retain];
-		MSHookIvar<NSArray *>(rtn, "_sectionStartStrings") = [@[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j",@"k",@"l",@"m",@"n",@"o",@"p",@"q",@"r",@"s",@"t",@"u",@"v",@"w",@"x",@"y",@"z",@"ʒ"] retain];
-		MSHookIvar<NSArray *>(rtn, "_sectionTitles") = [@[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#"] retain];
-		MSHookIvar<NSArray *>(rtn, "_sectionIndexTitles") = [@[@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#"] retain];
-	}
-	
-	return rtn;
+	return %orig(dict);
 }
 
 %end
