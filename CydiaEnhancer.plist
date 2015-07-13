@@ -6,10 +6,8 @@
 	<dict>
 		<key>Executables</key>
 		<array>
-			<string>MobileCydia</string>
+			<string>Cydia</string>
 		</array>
 	</dict>
-	<key>SupportsRoot</key>
-	<string>1</string>
 </dict>
 </plist>
